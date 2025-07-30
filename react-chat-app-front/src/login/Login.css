@@ -1,0 +1,104 @@
+.maxPage {
+    background-image: url(./new-and-slightly-older-discord-login-screen-as-a-png-v0-nnd20frfve3d1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.loginBox {
+    height: 400px;
+    width: 700px;
+    background-color: #323339;
+    border-radius: 10px;
+}
+
+.box1 {
+    gap: 0;
+    height: 25%;
+    width: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.text {
+    text-align: center;
+  
+}
+
+.box2 {
+    text-align: left;
+    height: 65%;
+    width: 66%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0; /* ensures no spacing between box22 and others */
+}
+
+.box22 {
+    margin-top: 0;
+
+    display: flex; /* ✅ NEW: makes children stack with controlled spacing */
+    flex-direction: column;
+    gap: 8px;       /* ✅ NEW: controls spacing between input/button/p/a elements */
+}
+
+/* ✅ NEW: remove default margins that cause unwanted spacing */
+.box22 p,
+.box22 a {
+    margin: 0;
+    padding: 0;
+}
+
+.input,
+.button {
+    margin: 0; /* ✅ remove default spacing between inputs and buttons */
+}
+
+.input {
+    border-radius: 7px;
+    font-size: 15px;
+    width: 420px;
+    height: 40px;
+    border: 2px solid transparent;
+    background-color: #28292E;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid #7BB0F5;
+}
+
+.button {
+    padding: 7px;
+    width: 420px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #5865F2;
+    border: none;
+    outline: none;
+    color: white;
+    transition: background-color 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+
+.button:hover {
+    background-color: #4654C0;
+    outline: none;
+}
+
+.pLast:hover {
+    text-decoration: underline;
+    
+}

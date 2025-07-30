@@ -1,0 +1,87 @@
+.mainDiv {
+  height: 100vh;
+  width: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox {
+  height: 10.5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.chatZone {
+
+  height: 100%;
+  width: 99%;
+  overflow-y: auto;
+}
+
+.chatBox {
+
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+
+
+}
+
+
+
+.input {
+  margin-bottom: 25px;
+  font-size: 18px;
+  width: 90%;
+  height: 80%;
+  border: none;
+  background-color: #131416;
+  border-radius: 8px;
+  color: white;
+  margin-left: 2px;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.chat {
+
+  display: flex;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  gap: 15px;
+  padding: 10px;
+
+}
+
+.chat:hover {
+  background-color: #18181B;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-top: 18px;
+}
+
+.clickme {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+
+
+}

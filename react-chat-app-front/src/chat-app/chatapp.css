@@ -1,0 +1,25 @@
+.mainPage {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  background-color: red;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.box {
+
+  padding: 10px;
+}
+
+.channelPart {
+  flex-grow: 1; 
+  background-color: #070709;
+
+  
+}
