@@ -19,30 +19,29 @@ function Login() {
             email: username,
             password: password
         }
-        fetch('http://localhost:3500/auth/signin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not OK');
-                }
-                return response.json()
-
-
+        try {
+            const response = await fetch('http://localhost:3500/auth/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
             })
-            .then(data => {
-                console.log(data);
+
+            if (response.ok) {
+                const data = await response.json()
+                return data
+            } else {
+                throw new Error('Network response was not OK');
+            }
+
+        }
+
+        catch (error) {
+            throw error
+        }
 
 
-
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
     }
 
 
@@ -56,19 +55,20 @@ function Login() {
     async function Login() {
         if (username.length > 0 && password.length > 0) {
             const data = await sendData(username, password)
-            changeRes(data);
-            
-            
-           if(res){
-                 if (res.code === 500) {
-                changeColor('#f10404');
-                setTimeout(() => {
-                    changeColor('transparent')
-                }, 50);
-            }else{
-                
+            changeRes(data)
+
+            if (!res) {
+                console.log(res);
+            } else {
+                console.log("is this working ? ");
+
+                if (res.code = 500) {
+                    changeColor('#f10404');
+                    setTimeout(() => {
+                        changeColor('transparent')
+                    }, 500);
+                }
             }
-           }
         }
     }
     return (
