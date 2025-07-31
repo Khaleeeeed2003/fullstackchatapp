@@ -15,6 +15,7 @@ export class AuthService {
         return { code: 200 };
         } catch (error) {
             if (error.code === 11000) {
+               // test commit
                 return { code : 500 }
             }
             throw error;
