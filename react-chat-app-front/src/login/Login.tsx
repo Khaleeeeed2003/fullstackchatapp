@@ -27,16 +27,13 @@ function Login() {
                 },
                 body: JSON.stringify(user)
             })
-
             if (response.ok) {
                 const data = await response.json()
                 return data
             } else {
                 throw new Error('Network response was not OK');
             }
-
         }
-
         catch (error) {
             throw error
         }
@@ -85,6 +82,7 @@ function Login() {
                         <div style={{ margin: "0px" }}>
                             <p><b>email or phone number</b></p>
                             <input
+                                style={{ borderColor: `${color}` }}
                                 value={username}
                                 className='input'
                                 onChange={(e) => NameInput(e.target.value)}
