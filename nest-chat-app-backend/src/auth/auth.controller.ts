@@ -4,14 +4,19 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-        constructor(private AuthService:AuthService){}
+    constructor(private authService: AuthService) { }
 
+    @Post('login')
+    async login(@Body() body: LoginDTO) {
+        return this.authService.getTokens(body);
+    }
 
-    @Post('signin')
-    signIn(@Body() dto:LoginDTO){
-        console.log('test');
-        
-       return this.AuthService.SignIn(dto)
-        
+    @Post('refresh')
+    async refresh(@Body('refreshToken') token: string) {
+        const payload = await this.authService.verifyRefreshToken(token);
+        if (!payload) {
+            return { error: 'Invalid refresh token' };
+        }
+        return this.authService.getTokens(payload.sub, payload.username);
     }
 }
